@@ -10,16 +10,13 @@
 
     <link rel="stylesheet" href="../libs/css/mklib.css">
     <script type="text/javascript" src="../libs/js/iscroll.js"></script>
-    <script type="text/javascript" src="../libs/js/core.js"></script>
+    <script src="../libs/js/core.js"></script>
 
     <style>
 
         .mk-ui-btn {
             width: 80%;
             margin: 10px auto;
-        }
-        .mk-page {
-            display: none;
         }
 
     </style>
@@ -35,6 +32,13 @@
     <div class="mk-content" >
 
         <div id="btn-intro" class="mk-ui-btn" > <span class="mk-ui-btn-inner" >소개</span> </div>
+        <div id="btn-hello" class="mk-ui-btn" > <span class="mk-ui-btn-inner" >안녕들하십니까?</span> </div>
+
+        <!--<img src="../res/pic1.png" style="width: 50%;-->
+        <!--margin: 8px auto;-->
+        <!--display: block;-->
+        <!--">-->
+
 
     </div>
 
@@ -43,20 +47,13 @@
 
 </div>
 
-<div class="mk-page" id="page-intro" >
+<div class="mk-page" id="page-intro" style="display: none" >
 
     <div class="mk-header">
         <div class="mk-ui-backButton" >Back</div>
         <a>Intro</a></div>
 
     <div class="mk-content" >
-
-        <img src="../res/pic1.png" style="width: 50%;
-        margin: 8px auto;
-        display: block;
-        ">
-
-
     </div>
 
     <div class="mk-footer"></div>
@@ -64,39 +61,25 @@
 
 </div>
 
+
 <script>
 
-    var theApp={}
-
-    theApp.UIElements = {}
-    theApp.UIElements.pageHome = document.getElementById('page-home');
-    theApp.UIElements.pageIntro = document.getElementById('page-intro');
-
-    theApp.mkControl = new mk.control({
-        app : theApp,
-        startPage : theApp.UIElements.pageHome
-    });
+//    document.getElementById('btn-intro').addEventListener('mousedown',function(e) {
+//        document.getElementById('page-home').style.display = 'none';
+//        document.getElementById('page-intro').style.display = 'block';
+//    });
 
     mk.helper.setUpButton({
         target : document.getElementById('btn-intro'),
         OnClick : function() {
-            theApp.mkControl.changePage(theApp.UIElements.pageIntro);
+            document.getElementById('page-home').style.display = 'none';
+            document.getElementById('page-intro').style.display = 'block';
         }
-
     });
 
-    theApp.UIElements.backBtns = document.querySelectorAll('.mk-ui-backButton');
 
-    for(var i=0;i<theApp.UIElements.backBtns.length;i++) {
-        mk.helper.setUpButton({
-            target : theApp.UIElements.backBtns[i],
-            OnClick : function() {
-                theApp.mkControl.backPage();
-            }
 
-        });
-
-    }
+    
 
 </script>
 

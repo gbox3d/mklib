@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>mklib sample : menu button</title>
+
+    <link rel="stylesheet" href="../libs/css/mklib.css">
+    <script type="text/javascript" src="../libs/js/iscroll.js"></script>
+
+
+</head>
+<body>
+
+<div>
+    <div class="mk-ui-menuButton" >Home</div>
+</div>
+
+<div style="position: absolute;top:30px;" >
+    <div class="mk-ui-backButton" >Back</div>
+</div>
+
+
+<script>
+
+    document.querySelector('.mk-ui-menuButton').addEventListener('mousedown',function(evt) {
+
+        this.classList.toggle('pressed');
+
+    });
+
+    document.querySelector('.mk-ui-backButton').addEventListener('mousedown',function(evt) {
+
+        this.classList.toggle('pressed');
+
+    });
+
+
+</script>
+
+
+</body>
+</html>

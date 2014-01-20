@@ -13,24 +13,26 @@ mk.control = function (option) {
     var theApp = option.app;
 
     var page_history = [];
+    var current_page = option.startPage;
+    current_page.style.display = 'block';
 
     this.changePage = function(newpage) {
 
-        page_history.push(theApp.CurrentPage);
+        page_history.push(current_page);
+        current_page.style.display = 'none';
 
-        theApp.CurrentPage.style.display = 'none';
         newpage.style.display = 'block';
-        theApp.CurrentPage = newpage;
+        current_page = newpage;
     }
     this.backPage = function() {
 
-        theApp.CurrentPage.style.display = 'none';
+        current_page.style.display = 'none';
 
         if(page_history.length > 0 ) {
             var newpage = page_history.pop();
 
             newpage.style.display = 'block';
-            theApp.CurrentPage = newpage;
+            current_page = newpage;
         }
     }
 
@@ -47,6 +49,10 @@ mk.control = function (option) {
 
         }).bind(this),300);
 
+    }
+
+    this.getCurrentPage = function() {
+        return current_page;
     }
 
 }
