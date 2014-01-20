@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>iScroll demo: simple</title>
+
+    <link rel="stylesheet" href="../libs/css/mklib.css">
+    <script type="text/javascript" src="../libs/js/iscroll.js"></script>
+
+</head>
+<body>
+
+<div id="test-normal-btn" class="mk-ui-btn mk-ui-btn-up"
+        style="margin: 8px auto;width: 50%;">
+    <span class="mk-ui-btn-inner" >Button</span>
+</div>
+
+
+
+<script>
+
+    document.getElementById('test-normal-btn').addEventListener('mousedown',function(evt) {
+
+        this.classList.add('mk-ui-btn-down');
+
+    });
+
+    document.getElementById('test-normal-btn').addEventListener('mouseup',function(evt) {
+
+        this.classList.remove('mk-ui-btn-down');
+
+    });
+
+
+</script>
+
+</body>
+</html>

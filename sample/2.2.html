@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <style>
+
+        .mk-ui-btn {
+
+            display: block;
+            text-align: center;
+            cursor:pointer;
+            position: relative;
+            margin: 8px 0px;
+            padding: 0;
+
+            -webkit-box-shadow: 0px 1px 4px rgba(0,0,0,0.3);
+
+            -webkit-border-radius: 15px; /*{global-radii-buttons}*/;
+            -webkit-background-clip: padding-box;
+
+            font-family: Helvetica;
+            text-decoration: none;
+
+            /*
+            택스트 선택 효과 안보이게 하기
+            http://stackoverflow.com/questions/826782/css-rule-to-disable-text-selection-highlighting
+            */
+            -webkit-tab-highlight-color:rgba(0,0,0,0);
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+
+
+        }
+
+        .mk-ui-btn-up {
+            border: 1px solid 		#ccc /*{c-bup-border}*/;
+            background: 			#eee /*{c-bup-background-color}*/;
+            font-weight: bold;
+            color: 					#222 /*{c-bup-color}*/;
+            text-shadow: 0 /*{c-bup-shadow-x}*/ 1px /*{c-bup-shadow-y}*/ 0 /*{c-bup-shadow-radius}*/ #fff /*{c-bup-shadow-color}*/;
+            background-image: -webkit-gradient(linear, left top, left bottom, from( #fff), to( #f1f1f1 )); /* Saf4+, Chrome */
+
+        }
+        .mk-ui-btn-down {
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#989898), to(#464646)); /* Saf4+, Chrome */
+
+        }
+
+        .mk-ui-btn-inner {
+            font-size: 16px;
+            padding: 10px 20px;
+            min-width: 20px;
+            display: block;
+            position: relative;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            zoom: 1;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+<div id="test-btn" class="mk-ui-btn mk-ui-btn-up" > <span class="mk-ui-btn-inner" >Button</span> </div>
+
+<script>
+
+    document.getElementById('test-btn').addEventListener('mousedown',function(evt) {
+
+        this.classList.add('mk-ui-btn-down');
+
+    });
+
+    document.getElementById('test-btn').addEventListener('mouseup',function(evt) {
+
+        this.classList.remove('mk-ui-btn-down');
+
+    });
+
+</script>
+
+
+</body>
+</html>

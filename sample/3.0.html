@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>page sample</title>
+
+    <link rel="stylesheet" href="../libs/css/mklib.css">
+    <script type="text/javascript" src="../libs/js/iscroll.js"></script>
+
+    <style>
+
+        .mk-ui-btn {
+            width: 80%;
+            margin: 10px auto;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+<div class="mk-page" id="page-home" >
+
+    <div class="mk-header"><a>Home</a></div>
+
+    <div class="mk-content" >
+
+        <div id="btn-intro" class="mk-ui-btn mk-ui-btn-up" > <span class="mk-ui-btn-inner" >소개</span> </div>
+        <div id="btn-hello" class="mk-ui-btn mk-ui-btn-up" > <span class="mk-ui-btn-inner" >안녕들하십니까?</span> </div>
+
+        <!--<img src="../res/pic1.png" style="width: 50%;-->
+        <!--margin: 8px auto;-->
+        <!--display: block;-->
+        <!--">-->
+
+
+    </div>
+
+    <div class="mk-footer"></div>
+
+
+</div>
+
+<div class="mk-page" id="page-intro" style="display: none" >
+
+    <div class="mk-header">
+        <div class="mk-ui-menuButton" >Home</div>
+        <a>Intro</a></div>
+
+    <div class="mk-content" >
+
+        <!--<img src="../res/pic1.png" style="width: 50%;-->
+        <!--margin: 8px auto;-->
+        <!--display: block;-->
+        <!--">-->
+
+
+    </div>
+
+    <div class="mk-footer"></div>
+
+
+</div>
+
+
+
+
+
+<script>
+
+    document.getElementById('btn-intro').addEventListener('click',function(e) {
+
+        document.getElementById('page-home').style.display = 'none';
+        document.getElementById('page-intro').style.display = 'block';
+    });
+
+    document.querySelector('#page-intro .mk-ui-menuButton').addEventListener('click',function(e) {
+        document.getElementById('page-home').style.display = 'block';
+        document.getElementById('page-intro').style.display = 'none';
+    });
+
+    
+
+</script>
+
+</body>
+</html>
