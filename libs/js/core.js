@@ -84,6 +84,11 @@ mk.helper = {
             _OnButtonDown
         );
 
+        option.target.addEventListener('touchstart',
+            _OnButtonDown
+        );
+
+
     }
 
 }
